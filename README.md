@@ -12,3 +12,5 @@ python move_character_with_key.py
 - Esc 또는 창 닫기: 종료
 
 Python과 pico2d가 필요합니다. 필요한 경우 `python -m pip install pico2d`로 설치합니다.
+이미지는 코드 파일을 기준으로 불러오므로 다른 폴더에서 실행해도 됩니다.
+
