@@ -1,29 +1,16 @@
+from pathlib import Path
 from pico2d import *
 
+WIDTH, HEIGHT = 1280, 1024
+FRAME_SIZE = 100
+ANIMATION_FPS = 8
+MOVE_SPEED = 250  # 초당 이동 거리
 
-open_canvas()
-grass = load_image('grass.png')
-character = load_image('animation_sheet.png')
-
-
-def handle_events():
-    global running
-
-    # fill here
-
-    events = get_events()
-    for event in events:
-        if event.type == SDL_QUIT:
-            running = False
-        # fill here
-
-
-running = True
-x = 800 // 2
+x, y = WIDTH / 2, HEIGHT / 2
 frame = 0
+facing = 1  # 1: 오른쪽, -1: 왼쪽
+running = True
+pressed_keys = set()
+moving = False
 
-# fill here
-
-
-close_canvas()
 
