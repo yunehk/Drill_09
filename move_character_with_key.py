@@ -28,3 +28,15 @@ def handle_events():
             pressed_keys.discard(event.key)
 
 
+def update(dt):
+    global x, y, frame, facing, moving
+    dx = int(SDLK_RIGHT in pressed_keys) - int(SDLK_LEFT in pressed_keys)
+    dy = int(SDLK_UP in pressed_keys) - int(SDLK_DOWN in pressed_keys)
+
+    moving = dx != 0 or dy != 0
+    distance = MOVE_SPEED * dt
+    x += dx * distance
+    y += dy * distance
+
+
+
