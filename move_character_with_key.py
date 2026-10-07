@@ -44,5 +44,10 @@ def update(dt):
     x += dx * distance
     y += dy * distance
 
+    # 중심이 아니라 100x100 스프라이트 전체가 화면 안에 남도록 제한한다.
+    half = FRAME_SIZE / 2
+    x = max(half, min(WIDTH - half, x))
+    y = max(half, min(HEIGHT - half, y))
+
 
 
