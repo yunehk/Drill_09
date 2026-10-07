@@ -11,3 +11,4 @@ python move_character_with_key.py
 - 위아래 이동 시 마지막 좌우 방향 유지
 - Esc 또는 창 닫기: 종료
 
+Python과 pico2d가 필요합니다. 필요한 경우 `python -m pip install pico2d`로 설치합니다.
