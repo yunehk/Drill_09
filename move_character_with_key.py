@@ -14,3 +14,17 @@ pressed_keys = set()
 moving = False
 
 
+def handle_events():
+    global running
+    for event in get_events():
+        if event.type == SDL_QUIT:
+            running = False
+        elif event.type == SDL_KEYDOWN:
+            if event.key == SDLK_ESCAPE:
+                running = False
+            elif event.key in (SDLK_LEFT, SDLK_RIGHT, SDLK_UP, SDLK_DOWN):
+                pressed_keys.add(event.key)
+        elif event.type == SDL_KEYUP:
+            pressed_keys.discard(event.key)
+
+
