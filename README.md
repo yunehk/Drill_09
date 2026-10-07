@@ -2,3 +2,7 @@
 
 `move_character_with_key.py`를 실행합니다.
 
+```text
+python move_character_with_key.py
+```
+
