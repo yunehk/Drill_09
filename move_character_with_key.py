@@ -33,6 +33,10 @@ def update(dt):
     dx = int(SDLK_RIGHT in pressed_keys) - int(SDLK_LEFT in pressed_keys)
     dy = int(SDLK_UP in pressed_keys) - int(SDLK_DOWN in pressed_keys)
 
+    # 위아래로만 이동할 때는 마지막으로 바라보던 좌우 방향을 유지한다.
+    if dx != 0:
+        facing = 1 if dx > 0 else -1
+
     moving = dx != 0 or dy != 0
     distance = MOVE_SPEED * dt
     x += dx * distance
