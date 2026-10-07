@@ -39,6 +39,8 @@ def update(dt):
 
     moving = dx != 0 or dy != 0
     distance = MOVE_SPEED * dt
+    if dx != 0 and dy != 0:
+        distance /= 2 ** 0.5  # 대각선에서도 이동 속도를 같게 맞춘다.
     x += dx * distance
     y += dy * distance
 
