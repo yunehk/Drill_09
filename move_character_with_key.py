@@ -1,7 +1,15 @@
 from pathlib import Path
+import site
+import sys
+
+# Python이 드라이브 최상위에 설치된 경우 잘못 계산되는 패키지 경로를 보완한다.
+if sys.platform == 'win32' and sys.prefix.endswith(':'):
+    package_folder = Path(sys.executable).resolve().parent / 'Lib' / 'site-packages'
+    site.addsitedir(str(package_folder))
+
 from pico2d import *
 
-WIDTH, HEIGHT = 1280, 1024
+WIDTH, HEIGHT = 800, 640  # 창 전체가 모니터 안에 보이도록 설정
 FRAME_SIZE = 100
 ANIMATION_FPS = 8
 MOVE_SPEED = 250  # 초당 이동 거리
