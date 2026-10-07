@@ -51,3 +51,15 @@ def update(dt):
     frame = (frame + ANIMATION_FPS * dt) % 8
 
 
+def draw():
+    clear_canvas()
+    ground.draw(WIDTH / 2, HEIGHT / 2, WIDTH, HEIGHT)
+    if moving:
+        row = 1 if facing == 1 else 0
+    else:
+        row = 3 if facing == 1 else 2
+    character.clip_draw(int(frame) * FRAME_SIZE, row * FRAME_SIZE,
+                        FRAME_SIZE, FRAME_SIZE, x, y)
+    update_canvas()
+
+
