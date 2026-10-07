@@ -48,6 +48,6 @@ def update(dt):
     half = FRAME_SIZE / 2
     x = max(half, min(WIDTH - half, x))
     y = max(half, min(HEIGHT - half, y))
-
+    frame = (frame + ANIMATION_FPS * dt) % 8
 
 
