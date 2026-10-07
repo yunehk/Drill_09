@@ -63,3 +63,23 @@ def draw():
     update_canvas()
 
 
+def main():
+    global ground, character
+    open_canvas(WIDTH, HEIGHT)
+    folder = Path(__file__).resolve().parent
+    ground = load_image(str(folder / 'TUK_GROUND.png'))
+    character = load_image(str(folder / 'animation_sheet.png'))
+    previous_time = get_time()
+    while running:
+        now = get_time()
+        dt = min(now - previous_time, 0.05)
+        previous_time = now
+        handle_events()
+        if not running:
+            break
+        update(dt)
+        draw()
+        delay(0.01)
+    close_canvas()
+
+
